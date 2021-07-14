@@ -1,7 +1,7 @@
 # from secrets import choice
 from random import choices
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, FloatField, SelectField
+from wtforms import StringField, PasswordField, FloatField, SelectField, IntegerField
 from wtforms.validators import InputRequired, Email, Length, ValidationError, DataRequired
 from wtforms.widgets import Input
 class SignUpForm(FlaskForm):
@@ -30,7 +30,7 @@ class StockForm(FlaskForm):
     quantity = FloatField('Quantity', validators=[InputRequired()])
     unit_abbreviation = SelectField("Unit of Measurement", choices=[('Kg', 'Kilograms'), ('lbs', 'Pounds'), ('Gr', 'Grams'), ('Oz', 'Ounces'), ('C', 'Cups'), ('L', 'Liters'), ('Gal', 'Gallons'), ('Qt', 'Quart'), ('Pt', 'Pint'), ('Units', 'Units')],  validators=[InputRequired()])
     # unit_abbreviation = SelectField("Unit Measurement")
-    reorder_level = StringField("Minimum required in stock", validators=[InputRequired()])
+    reorder_level = IntegerField("Minimum required in stock", validators=[InputRequired()])
 
 class StockUpdateForm(FlaskForm):
     """Form to update an item from the db"""
@@ -39,7 +39,7 @@ class StockUpdateForm(FlaskForm):
     # quantity = FloatField('Quantity')
     unit_abbreviation = SelectField("Unit of Measurement", choices=[('Kg', 'Kilograms'), ('lbs', 'Pounds'), ('Gr', 'Grams'), ('Oz', 'Ounces'), ('C', 'Cups'), ('L', 'Liters'), ('Gal', 'Gallons'), ('Qt', 'Quart'), ('Pt', 'Pint'), ('Units', 'Units')],  validators=[InputRequired()])
     # unit_abbreviation = StringField("Unit Measurement")
-    reorder_level = StringField("Reorder Level")
+    reorder_level = IntegerField("Reorder Level")
 
 class Search(FlaskForm):
     """Form to search products and categories"""

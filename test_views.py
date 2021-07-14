@@ -9,7 +9,7 @@ from unittest import TestCase
 
 from werkzeug.utils import html, redirect
 from app import app, CURR_USER_KEY, API_BASE_URL
-from secrets import API_KEY
+from secrets_git import API_KEY
 from models import db, connect_db, User, Stock
 from flask import session, g
 

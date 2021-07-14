@@ -10,8 +10,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy import exc
 from models import db, connect_db, User, Stock, UnitConvertion
 from forms import SignUpForm, LoginForm, StockForm, StockUpdateForm, IssueForm, ReceiveForm,UserEditForm, AddConvertion, Search
-from secrets_git import *
-
+import secrets_git
 
 CURR_USER_KEY = "curr_user"
 API_BASE_URL = 'https://api.spoonacular.com/recipes/convert?'
@@ -382,7 +381,7 @@ def convert_unit_form():
     source_unit = request.args.get('convertFrom')
     target_unit = request.args.get('convertTo')
 
-    response = requests.get(f"{API_BASE_URL}", params={'apiKey':API_KEY, 
+    response = requests.get(f"{API_BASE_URL}", params={'apiKey':secrets_git.API_KEY, 
                                                         'ingredientName':ingredient, 
                                                         'sourceAmount':source_amount, 
                                                         'sourceUnit':source_unit, 

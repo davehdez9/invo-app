@@ -10,7 +10,7 @@ from sqlalchemy.exc import IntegrityError
 from sqlalchemy import exc
 from models import db, connect_db, User, Stock, UnitConvertion
 from forms import SignUpForm, LoginForm, StockForm, StockUpdateForm, IssueForm, ReceiveForm,UserEditForm, AddConvertion, Search
-from secrets_git import API_KEY
+from secrets_git import *
 
 
 CURR_USER_KEY = "curr_user"

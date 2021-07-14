@@ -1,0 +1,35 @@
+{% extends "base2.html" %}
+{% block title %}List of Items{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Manage Item</h1>
+        
+        <a href="/issue_items/{{item.id}}/"><div class="btn btn-danger"><i class="bi bi-dash-circle-fill"></i></div></a>
+        <a href="/receive_items/{{item.id}}/"><div class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i></div></a>
+        <br>
+
+        <div class="display_table">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ITEM NAME</th>
+                        <th>QUANTITY IN STOCK</th>
+                        <th>LAST UPDATED</th>
+                        <th>REORDER LEVEL</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>{{item.product_name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>
+                        <span class="text-muted">{{item.last_updated.strftime('%m/%d/%Y %H:%M')}}</span>
+                    </td>
+                    <td>{{item.reorder_levels}}</td>
+                </tr>
+                
+            </table>
+        </div>
+        
+    </div>
+{% endblock %}

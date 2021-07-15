@@ -1,8 +1,22 @@
 # Invo
 
-You can find the deployed project at https://my-invo.herokuapp.com/
+You can find the deployed project at https://my-invo-app.herokuapp.com/
 
 Friendly inventory system app that will help to maintain control of any item and have an appropriate control of these, allowing them to enter and update and delete any product.
+
+## Getting Started:
+Clone this repository and running in your local system.
+
+    > git clone https://github.com/davehdez9/invo-app.git
+    > cd invo-app
+
+Proceed to install the rest using the command below:
+
+    > pip3 install -r requirements.txt
+
+Run the App:
+
+    > FLASK_ENV=development flask run
 
 ## Key Features
 
@@ -31,6 +45,30 @@ Adding a product requires a category, name, quantity, unit of measure and the mi
 In the Dashboard it will be displayed in yellow when the item is below the minimum required. You can add or subtract any amount to level according to the minimum required.
 
 ![issue-receive](static/gifs/issue-receive.gif)
+
+### Edit Item:
+You can edit the category, name, unit of measure and the minimum quantity in stock.
+
+![update-item](static/gifs/update-item.gif)
+
+### Delete Item:
+You can remove the item from stock.
+
+![delete-item](static/gifs/delete-item.gif)
+
+### Search Item:
+You can filter an item by its category or name.
+
+![search-item](static/gifs/search-item.gif)
+
+### Convert units of measurement:
+
+![convert-unit](static/gifs/convert-unit.gif)
+### Edit profile:
+Edit the email and the name in the same way that you can delete the profile.
+
+![edit-profile](static/gifs/edit-profile.gif)
+
 
 
 ## Tech Stack
